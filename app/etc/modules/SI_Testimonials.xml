@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <SI_Testimonials>
+            <active>true</active>
+            <codePool>local</codePool>
+        </SI_Testimonials>
+    </modules>
+</config>

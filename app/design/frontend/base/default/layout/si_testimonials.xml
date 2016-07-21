@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<layout>
+    <default>
+        <reference name="top.links">
+            <action method="addLink" translate="label title" module="si_testimonials">
+                <label>Testimonials</label>
+                <url helper="si_testimonials/getTestimonialsUrl"/>
+                <title>Feedback</title>
+                <prepare>true</prepare>
+                <urlParams/>
+                <position>11</position>
+                <aParams>
+                    <target>_blank</target>
+                </aParams>
+            </action>
+        </reference>
+    </default>
+
+    <sitestimonials_index_index>
+        <reference name="content">
+            <block type="core/text_list" name="si_testimonials">
+                <block type="sitestimonials/testimonials" name="testimonials" template="si/testimonials/index.phtml">
+                    <block type="page/html_pager" name="testimonials.pager"/>
+                </block>
+            </block>
+        </reference>
+    </sitestimonials_index_index>
+
+    <sitestimonials_index_new>
+        <reference name="content">
+            <block type="core/text_list" name="si_testimonials_saved">
+                <block type="core/template" template="si/testimonials/saved_message.phtml"/>
+            </block>
+        </reference>
+    </sitestimonials_index_new>
+
+    <customer_logged_in>
+        <reference name="si_testimonials">
+            <block type="core/template" template="si/testimonials/new.phtml"/>
+        </reference>
+    </customer_logged_in>
+</layout>

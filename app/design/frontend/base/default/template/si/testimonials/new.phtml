@@ -1,0 +1,13 @@
+<br><br>
+<h4><?php echo $this->__('Write Your Review') ?></h4>
+<form action="<?php echo $this->getUrl('feedback/index/new/')?>" id="add_testimonial" method="post">
+    <textarea name="testimonial[content]" id="" cols="30" rows="5"></textarea>
+    <br>
+    <input type="submit" value="<?php echo $this->__('Add Testimonial')?>" class="button">
+</form>
+<script type="text/javascript">
+
+    //<![CDATA[
+    var testimonialForm = new VarienForm('add_testimonial', true);
+    //]]>
+</script>

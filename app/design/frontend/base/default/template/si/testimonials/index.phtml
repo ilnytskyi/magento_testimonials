@@ -1,0 +1,26 @@
+<div class="page-title">
+    <h1><?php echo $this->__('Feedback') ?></h1>
+</div>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<?php
+$testimonials = $this->getCollection();
+
+if ($testimonials->getSize()): ?>
+<?php
+foreach ($testimonials as $item):
+    $customer = Mage::getModel('customer/customer')->load($item['user_id']);
+?>
+
+    <p>
+        <i><?php echo $this->__('Posted by') . ' ' . $customer->getName() ?></i>
+        <i><?php echo $item['created'] ?></i><hr>
+        <p>
+            <?php echo $item['content'] ?>
+        </p>
+    </p>
+
+<?php
+endforeach;
+endif;
+echo $this->getPagerHtml();
+?>
